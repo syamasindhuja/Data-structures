@@ -1,0 +1,66 @@
+#include<stdio.h>
+#include<conio.h>
+int max=5;
+int stack[5];
+int top=-1;
+void push()
+{
+    if(top==max-1)
+    {
+        printf("overflow");
+    }
+    else
+    {
+        int n;
+        printf("enter element to be pushed");
+        scanf("%d",&n);
+        stack[++top]=n;
+    }
+}
+void pop()
+{
+    if(top==-1)
+    {
+        printf("underflow");
+    }
+    else
+    {
+        printf("%d is popped",stack[top]);
+        top--;
+    }
+}
+void show()
+{
+    if(top==-1)
+    {
+        printf("no ele to display");
+    }
+    else
+    {
+        for(int i=top;i>=0;i--)
+        {
+            printf("%d",stack[i]);
+        }
+    }
+}
+int main()
+{
+    while(1)
+    {
+        
+    int x;
+    scanf("%d",&x);
+   
+     
+        switch(x)
+        {
+            case 1: push();
+            break;
+            case 2 : pop();
+            break;
+            case 3: show();
+            break;
+        }
+    }
+   
+}

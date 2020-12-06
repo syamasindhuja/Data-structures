@@ -1,0 +1,75 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+int size=5;
+int q[5];
+int front=0;
+int rear=-1;
+void enqueue()
+{
+    if(rear==size-1)
+    {
+        printf("overflow");
+    }
+    else
+    {
+        int n;
+        printf("enter element to be enqueued");
+        scanf("%d",&n);
+        rear++;
+        q[rear]=n;
+        
+    }
+}
+void dequeue()
+{
+    if(rear<front)
+    {
+        printf("underflow");
+    }
+    else
+    {
+        printf("%d is dequeued",q[front]);
+        front++;
+    }
+}
+void display()
+{
+    if(rear<front)
+    {
+        printf("no ele");
+    }
+    else
+    {
+       
+        for(int i=front;i<=rear;i++)
+        {
+            printf("%d V",q[i]);
+            
+        }
+    }
+    
+}
+void main()
+{
+
+    while(1)
+    {
+              int i;
+    printf("enter ur choice");
+      
+    scanf("%d",&i);
+        switch(i)
+        {
+            case 1: enqueue();
+            break;
+            case 2: dequeue();
+            break;
+            case 3:display();
+            break;
+            default:exit(0);
+            break;
+        }
+    }
+
+}
